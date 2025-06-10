@@ -15,6 +15,8 @@ return [
             'passwordNotMatch' => 'passwordNotMatch',
             'emailExists' => 'emailExists',
             'insertDataExceptionError' => 'insertDataExceptionError',
+            'invalidEmailOrPassword' => 'invalidEmailOrPassword',
+            'loginException' => 'loginException'
         ],
         'success' => [
             'userCreated' => 'userCreated',
