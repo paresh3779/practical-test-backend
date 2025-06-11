@@ -59,6 +59,9 @@ class AuthController extends Controller
             $token = $tokenResult->token;
             $token->expires_at = Carbon::now()->addHour(1);
             $token->save();
+
+            $user = $user->load(['permissions', 'roles']);
+
         }catch(Exception $exception) {
             return response()->json([
                 'success' => false,
