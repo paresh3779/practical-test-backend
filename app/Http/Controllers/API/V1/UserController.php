@@ -66,6 +66,10 @@ class UserController extends Controller
             $user->password = Hash::make($data['password']);
             $user->save();
 
+            /** Assign user role & permission to user */
+            $user->syncRoles(['user']);
+            $user->syncPermissions(['view-a-job']);
+
         } catch (\Exception $exception) {
             return response()->json([
                 'success' => false,
